@@ -17,7 +17,7 @@ public class AvoidingInitializationOfObject
     	Unsafe unsafe = UnsafeHelper.get().getUnsafe();
     	
     	// Normal initialization:
-    	Person adam = new Person("Adam", 20);
+    	Person adam = new Person("Adam", 20, 1024);
     	System.out.println(adam);
     	
     	// This case will cause compilation error:
@@ -25,6 +25,7 @@ public class AvoidingInitializationOfObject
     	
     	// Initializing without calling the constructor
     	// 'empty' object is initialized with name = null and age = 0
+    	// It`s important: final fields was not initialized in constructor! 
     	Person empty = (Person) unsafe.allocateInstance(Person.class);
     	System.out.println(empty);
     	

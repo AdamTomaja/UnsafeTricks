@@ -5,19 +5,28 @@ package pl.tomaja.common;
  */
 public class Person {
 
-	private String name;
-	private int age;
-	private boolean constructorCalled;
+	private final int pin;
+	private final String name;
+	private final int age;
+	private final boolean constructorCalled;
 	
-	public Person(String name, int age) {
+	public Person(String name, int age, int pin) {
 		this.name = name;
 		this.age = age;
+		this.pin = pin;
 		
 		constructorCalled = true;
 	}
 
+	public void tryPin(int pin) {
+		if(this.pin != pin) {
+			throw new RuntimeException("Invalid pin!");
+		}
+	}
+
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", age=" + age + ", constructorCalled=" + constructorCalled + "]";
+		return "Person [pin=" + pin + ", name=" + name + ", age=" + age + ", constructorCalled=" + constructorCalled
+				+ "]";
 	}
 }
