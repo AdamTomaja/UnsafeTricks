@@ -1,6 +1,7 @@
 package pl.tomaja;
 
 import pl.tomaja.common.Person;
+import pl.tomaja.common.UI;
 import pl.tomaja.common.UnsafeHelper;
 import sun.misc.Unsafe;
 
@@ -18,7 +19,7 @@ public class AvoidingInitializationOfObject
     	
     	// Normal initialization:
     	Person adam = new Person("Adam", 20, 1024);
-    	System.out.println(adam);
+    	UI.showInformation("Safe person", adam);
     	
     	// This case will cause compilation error:
     	// Person mark = new Person();
@@ -27,7 +28,6 @@ public class AvoidingInitializationOfObject
     	// 'empty' object is initialized with name = null and age = 0
     	// It`s important: final fields was not initialized in constructor! 
     	Person empty = (Person) unsafe.allocateInstance(Person.class);
-    	System.out.println(empty);
-    	
+    	UI.showInformation("Unsafe person", empty);
     }
 }

@@ -3,6 +3,7 @@ package pl.tomaja;
 import java.lang.reflect.Field;
 
 import pl.tomaja.common.Person;
+import pl.tomaja.common.UI;
 import pl.tomaja.common.UnsafeHelper;
 import sun.misc.Unsafe;
 
@@ -37,9 +38,9 @@ public class MemoryCorruption {
 	private static void tryAuthenticate(Person adam, int pin) {
 		try {
 			adam.tryPin(pin);
-			System.out.println("Authenticated with pin " + pin);
+			UI.showInformation("Authenticated with pin", pin);
 		} catch (Exception e) {	
-			System.out.println("Unable to authenticate with pin " + pin);
+			UI.showInformation("Unable to authenticate with pin", pin);
 		}
 	}
 }

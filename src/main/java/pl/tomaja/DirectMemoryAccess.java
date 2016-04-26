@@ -1,5 +1,6 @@
 package pl.tomaja;
 
+import pl.tomaja.common.UI;
 import pl.tomaja.common.UnsafeHelper;
 import sun.misc.Unsafe;
 
@@ -21,9 +22,10 @@ public class DirectMemoryAccess {
 		unsafe.putInt(ptr, 512);
 
 		// Read int from memory and display
-		int val = unsafe.getInt(ptr);
-		System.out.println("Integer val: " + val);
+		final int val = unsafe.getInt(ptr);
+		UI.showInformation("Integer value", val);
 		
 		unsafe.freeMemory(ptr);
+		UI.showInformation("Memory freed");
 	}
 }
