@@ -2,6 +2,8 @@ package pl.tomaja;
 
 import java.io.IOException;
 
+import pl.tomaja.common.UnsafeHelper;
+
 /**
  * This example shows how to throw checked exceptions without using throws or catch
  * 

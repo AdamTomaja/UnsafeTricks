@@ -1,5 +1,7 @@
 package pl.tomaja;
 
+import pl.tomaja.common.Person;
+import pl.tomaja.common.UnsafeHelper;
 import sun.misc.Unsafe;
 
 /**

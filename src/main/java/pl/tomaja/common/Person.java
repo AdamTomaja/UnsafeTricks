@@ -1,4 +1,4 @@
-package pl.tomaja;
+package pl.tomaja.common;
 
 /**
  * @author atomaja
