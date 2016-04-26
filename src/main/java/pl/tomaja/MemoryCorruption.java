@@ -31,7 +31,6 @@ public class MemoryCorruption {
 
 		// Hacked!
 		// Hacker is authenticated with his own pin
-		// Important: pin field is marked as final! 
 		tryAuthenticate(adam, 1000);
 	}
 
