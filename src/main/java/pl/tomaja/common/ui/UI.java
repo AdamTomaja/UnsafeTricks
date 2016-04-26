@@ -1,16 +1,17 @@
-package pl.tomaja.common;
+package pl.tomaja.common.ui;
 
 /**
  * @author atomaja
  */
 public class UI {
 
+	private static final UIProvider provider = new UIProvider();
+	
 	public static void showInformation(String title, Object information) {
-		System.out.format("%s: %s", title, information);
-		System.out.println();
+		provider.showInformation(title, information);
 	}
 	
 	public static void showInformation(Object information) {
-		System.out.println(information);
+		provider.showInformation(information);
 	}
 }

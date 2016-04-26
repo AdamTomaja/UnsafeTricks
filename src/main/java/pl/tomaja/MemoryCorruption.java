@@ -3,8 +3,8 @@ package pl.tomaja;
 import java.lang.reflect.Field;
 
 import pl.tomaja.common.Person;
-import pl.tomaja.common.UI;
 import pl.tomaja.common.UnsafeHelper;
+import pl.tomaja.common.ui.UI;
 import sun.misc.Unsafe;
 
 /**
