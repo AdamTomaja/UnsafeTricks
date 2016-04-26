@@ -20,7 +20,10 @@ public class DirectMemoryAccess {
 		// Write int to allocated memory
 		unsafe.putInt(ptr, 512);
 
+		// Read int from memory and display
 		int val = unsafe.getInt(ptr);
 		System.out.println("Integer val: " + val);
+		
+		unsafe.freeMemory(ptr);
 	}
 }
